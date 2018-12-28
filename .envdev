@@ -1,0 +1,17 @@
+#Global settings
+
+PREFIX="!"
+
+ADMIN_ROLE="admin"
+MOD_ROLE="mod"
+
+# Bot-specific settings
+
+ORACLE_TYPE="WATCHING"
+ORACLE_ACTIVITY="for commands"
+ORACLE_TOKEN=""
+
+BRIGAND_TYPE="WATCHING"
+BRIGAND_ACTIVITY="for commands"
+BRIGAND_TOKEN=""
+

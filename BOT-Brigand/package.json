@@ -1,0 +1,19 @@
+{
+  "name": "bot-brigand",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot-brigand.js",
+  "scripts": {
+    "start": "forever -o forever.log -e error.log start bot-brigand.js",
+    "restart": "forever -o forever.log -e error.log restart bot-brigand.js",
+    "stop": "forever stop bot-brigand.js",
+    "node": "node bot-brigand.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv": "^6.2.0",
+    "forever": "^0.15.3"
+  }
+}
