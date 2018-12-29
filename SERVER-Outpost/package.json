@@ -1,0 +1,21 @@
+{
+  "name": "server-outpost",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server-outpost.js",
+  "scripts": {
+    "start": "forever -o forever.log -e error.log start server-outpost.js",
+    "restart": "forever -o forever.log -e error.log restart server-outpost.js",
+    "stop": "forever stop server-outpost.js",
+    "node": "node server-outpost.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^6.2.0",
+    "forever": "^0.15.3",
+    "mysql": "^2.16.0",
+    "socket.io": "^2.2.0",
+    "socketio-auth": "^0.1.1"
+  }
+}

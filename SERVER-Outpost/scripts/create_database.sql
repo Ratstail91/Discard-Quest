@@ -1,0 +1,12 @@
+CREATE DATABASE IF NOT EXISTS discard;
+
+USE discard;
+
+CREATE TABLE IF NOT EXISTS log (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	discordID bigint,
+	time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP,
+	type varchar(32),
+	data varchar(255)
+);
+

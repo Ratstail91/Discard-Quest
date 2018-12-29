@@ -6,6 +6,7 @@ let discord = require('discord.js');
 let client = new discord.Client();
 
 // Bot Modules
+let {connectToServer, requestServerData} = require("../Shared/data_request.js");
 let {sendPublicMessage, sendPrivateMessage} = require("../Shared/messaging.js");
 let {generateDialogFunction, isAdmin} = require("../Shared/utility.js");
 
@@ -56,6 +57,8 @@ client.on('ready', async () => {
 	}
 
 	console.log("Logged in as: " + client.user.username + " - " + client.user.id);
+
+	connectToServer(client.user.username, process.env.SERVER_ADDRESS, process.env.SERVER_PORT, process.env.SERVER_PASS_KEY);
 });
 
 // Create an event listener for messages
@@ -97,6 +100,9 @@ function processAdminCommands(client, message) {
 	switch (command) {
 		case "ping": //DEBUGGING
 			sendPublicMessage(client, message.author, message.channel, "PONG!");
+			requestServerData("serverPing", (response) => {
+				sendPublicMessage(client, message.author, message.channel, response);
+			});
 			return true;
 
 		case "say":
