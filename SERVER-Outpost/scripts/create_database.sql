@@ -11,6 +11,19 @@ CREATE TABLE IF NOT EXISTS log (
 	data varchar(255)
 );
 
+/* card and badge information */
+CREATE TABLE IF NOT EXISTS cardlist (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name varchar(32),
+	text varchar(512)
+);
+
+CREATE TABLE IF NOT EXISTS badgelist (
+	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	name varchar(32),
+	text varchar(255)
+);
+
 /* user information */
 CREATE TABLE IF NOT EXISTS user (
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -50,8 +63,11 @@ CREATE TABLE IF NOT EXISTS card (
 	deckID int,
 	FOREIGN KEY (deckID) REFERENCES deck(id)
 		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	cardlistID int,
+	FOREIGN KEY (cardlistID) REFERENCES cardlist(id)
+		ON DELETE CASCADE
 		ON UPDATE CASCADE
-	/* TODO: card information */
 );
 
 /* the user's badges */
@@ -69,6 +85,9 @@ CREATE TABLE IF NOT EXISTS badge (
 	beltID int,
 	FOREIGN KEY (beltID) REFERENCES belt(id)
 		ON DELETE CASCADE
+		ON UPDATE CASCADE,
+	badgelistID int,
+	FOREIGN KEY (badgelistID) REFERENCES badgelist(id)
+		ON DELETE CASCADE
 		ON UPDATE CASCADE
-	/* TODO: badge information */
 );
