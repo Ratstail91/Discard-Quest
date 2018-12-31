@@ -46,6 +46,14 @@ io.on("connection", async (socket) => {
 server.listen(process.env.SERVER_PORT);
 console.log("listening on port " + process.env.SERVER_PORT);
 
+//utilities
+async function dbLog(id, type, data) {
+	let query = "INSERT INTO log (discordID, type, data) VALUES (?, ?, ?);";
+	return dbConnection.query(query, [id, type, data], (err, result) => {
+		if (err) throw err;
+	});
+}
+
 //respond to a ping with a pong
 async function handleServerPing(data, fn) {
 	return fn("SERVER PONG!");
