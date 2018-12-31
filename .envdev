@@ -1,9 +1,21 @@
-#Global settings
+# Global settings
 
 PREFIX="!"
 
 ADMIN_ROLE="admin"
 MOD_ROLE="mod"
+
+# Server settings
+
+SERVER_ADDRESS="http://127.0.0.1"
+SERVER_PASS_KEY=""
+SERVER_PORT="4500"
+
+# Database settings
+
+DATABASE_HOST="localhost"
+DATABASE_USER="discard"
+DATABASE_PASSWORD=""
 
 # Bot-specific settings
 
