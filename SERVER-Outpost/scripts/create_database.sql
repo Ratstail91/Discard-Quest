@@ -15,7 +15,8 @@ CREATE TABLE IF NOT EXISTS log (
 CREATE TABLE IF NOT EXISTS cardlist (
 	id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	name varchar(32),
-	text varchar(512)
+	regular varchar(255),
+	upgrade varchar(255)
 );
 
 CREATE TABLE IF NOT EXISTS badgelist (
