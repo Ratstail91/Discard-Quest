@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS item (
 	FOREIGN KEY (inventoryID) REFERENCES inventory(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
+	/* TODO: crystal, card or badge information */
 );
 
 /* the user's cards */
@@ -49,7 +50,8 @@ CREATE TABLE IF NOT EXISTS card (
 	deckID int,
 	FOREIGN KEY (deckID) REFERENCES deck(id)
 		ON DELETE CASCADE
-		ON UPDATE CASCADE,
+		ON UPDATE CASCADE
+	/* TODO: card information */
 );
 
 /* the user's badges */
@@ -59,6 +61,7 @@ CREATE TABLE IF NOT EXISTS belt (
 	FOREIGN KEY (userID) REFERENCES user(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
+	/* TODO: badge count */
 );
 
 CREATE TABLE IF NOT EXISTS badge (
@@ -67,4 +70,5 @@ CREATE TABLE IF NOT EXISTS badge (
 	FOREIGN KEY (beltID) REFERENCES belt(id)
 		ON DELETE CASCADE
 		ON UPDATE CASCADE
+	/* TODO: badge information */
 );
